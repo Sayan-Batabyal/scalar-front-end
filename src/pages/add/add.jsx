@@ -46,7 +46,7 @@ const Add = () => {
     const newUser={...info,"startDate":`${days[0]}`,"endDate":`${days[1]}`,"room":"404","amount":`${noOfhrs*100}`}
     
     try{
-    await axios.post("/user",newUser)
+    await axios.post("https://hotel-admin-scalar.netlify.app/user",newUser)
     }
     catch(err){
       alert("Please Fill All the Fields")
