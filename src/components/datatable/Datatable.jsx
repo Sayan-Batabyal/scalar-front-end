@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 function Datatable() {
   const [list,setList] = useState([]);
-  const {data}=useFetch("/user")
+  const {data}=useFetch("https://hotel-admin-scalar.netlify.app/user")
   
   useEffect(()=>{
     setList(data)
@@ -14,7 +14,7 @@ function Datatable() {
 
   const handleDelete= async (id)=>{
     try{
-       await axios.delete(`/user/${id}`);
+       await axios.delete(`https://hotel-admin-scalar.netlify.app/user/${id}`);
        setList(list.filter((item)=>item._id!==id));
     }catch(err){
       throw err;
